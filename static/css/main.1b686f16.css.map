@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.1b686f16.css","mappings":"AAAA,KACI,QAAS,CACT,SACJ,CAEA,IACI,eAAgB,CAChB,cACJ","sources":["App.css"],"sourcesContent":["body {\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nimg {\r\n    max-height: 100%;\r\n    max-width: 100%;\r\n}"],"names":[],"sourceRoot":""}
