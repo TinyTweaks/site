@@ -15,7 +15,7 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: rgb(235, 248, 252);
+    background-color: rgb(239, 247, 249);
     border-bottom-right-radius : 15px;
     border-bottom-left-radius : 15px;
 }
@@ -36,16 +36,17 @@ body {
 
 #nav-bar {
     position: absolute;
-    height: 3%;
+    height: 2.4%;
     width: 35vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     left: 20vh;
-    top: 11%;
-    border-bottom: 1px solid black;
+    top: 11.5%;
+    border-bottom: 2px solid #3A9BDC;
     font-size: 3vh;
     font-family: 'Teko', sans-serif;
+    border-radius: 7px;
 }
 
 #nav-cont {
@@ -61,8 +62,8 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 89vw;
-    bottom: 89.8%;
+    left: 90vw;
+    bottom: 89.4%;
     cursor: pointer;
 }
 
@@ -70,4 +71,8 @@ body {
     font-family: 'Montserrat Alternates', sans-serif;
     position: relative;
     bottom: 8%;
+}
+
+#nav-home {
+    text-decoration: underline solid #3A9BDC 3.5px;
 }

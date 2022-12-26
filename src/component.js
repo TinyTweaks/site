@@ -17,7 +17,7 @@ export function Navbar() {
                 <h1 id="nav-title">TinyTweaks</h1>
    
                 <nav id="nav-bar">
-                    <p id="nav-home">&nbsp; Home</p>
+                    <p>&nbsp; <span id="nav-home">Home</span></p>
                     <p>Details</p>
                     <p>Apps</p>
                     <p>Settings &nbsp;</p>
