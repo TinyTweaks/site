@@ -31,7 +31,7 @@ body {
     position: relative;
     font-size: 5.4vh;
     bottom: 10%;
-    left: 17.5%;
+    left: 15.5%;
 }
 
 #nav-bar {
@@ -53,26 +53,15 @@ body {
     height: 100%;
 }
 
-#nav-emoji {
-    float: right;
-    height: 2vh;
-    width: 2vh;
-    font-size: 2vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: 90vw;
-    bottom: 89.4%;
-    cursor: pointer;
-}
-
-#nav-emote {
-    font-family: 'Montserrat Alternates', sans-serif;
-    position: relative;
-    bottom: 8%;
-}
-
 #nav-home {
     text-decoration: underline solid #3A9BDC 3.5px;
+}
+
+#nav-emoji {
+    font-size: 2.5vh;
+    position: relative;
+    left: 160px;
+    bottom: 7vh;
+    display: grid;
+    place-items: center;
 }
