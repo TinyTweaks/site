@@ -31,7 +31,7 @@ body {
     position: relative;
     font-size: 5.4vh;
     bottom: 10%;
-    left: 19.5%;
+    left: 17.5%;
 }
 
 #nav-bar {
@@ -41,8 +41,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    left: 21.2vh;
-    top: 10%;
+    left: 20vh;
+    top: 11%;
     border-bottom: 1px solid black;
     font-size: 3vh;
     font-family: 'Teko', sans-serif;
@@ -62,7 +62,7 @@ body {
     align-items: center;
     position: absolute;
     left: 89vw;
-    bottom: 93.5%;
+    bottom: 89.8%;
     cursor: pointer;
 }
 
