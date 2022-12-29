@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './Home.jsx'
 import './App.css'
 
-function App() {
+const App = () => {
    return (
     <div id="container">
       <Routes>
