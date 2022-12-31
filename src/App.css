@@ -10,15 +10,13 @@ body {
 }
 
 #nav-style {
-    height: 17vh;
+    height: 15vh;
     width: 100vw;
-    border-bottom: 1px solid;
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: rgb(239, 247, 249);
-    border-bottom-right-radius : 15px;
-    border-bottom-left-radius : 15px;
+    border-bottom-right-radius : 12px;
+    border-bottom-left-radius : 12px;
 }
 
 #nav-logo {
@@ -28,10 +26,45 @@ body {
 }
 
 #nav-cont {
-    height: 90%;
-    width: 65vw;
-    border: 1px solid;
-    position: relative;
     left: 5vw;
-    font-size: 200%;
+    height: 90%;
+    width: 68vw;
+    position: relative;
+}
+
+#nav-title {
+    top: 7%;
+    position: relative;
+    font-size: clamp(10px, 5vh, 7.6vw);
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+#nav-emoji {
+    font-size: clamp(5px, 2vh, 3vw);
+    position: relative;
+    bottom: 0.5vh;
+}
+
+#nav-navigation {
+    height: 3.3vh;
+    position: relative;
+    top: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: clamp(10px, 58vw, 43vh);
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-radius: 3px;
+}
+
+.nav-design {
+    height: 90%;
+    width: 25%;
+    display: grid;
+    place-items: center;
+    border-radius: 35px;
+    font-size: clamp(10px, 3vw, 2vh);
+    color: white;
+    text-decoration: none;
 }
