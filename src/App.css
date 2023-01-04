@@ -6,7 +6,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #nav-style {
@@ -15,8 +15,7 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-    border-bottom-right-radius : 12px;
-    border-bottom-left-radius : 12px;
+    overflow: hidden;
 }
 
 #nav-logo {
@@ -55,16 +54,64 @@ body {
     width: clamp(10px, 58vw, 43vh);
     border-top: 1px solid;
     border-bottom: 1px solid;
-    border-radius: 3px;
+    border-radius: 3px; 
 }
 
 .nav-design {
     height: 90%;
-    width: 25%;
+    width: 28%;
     display: grid;
     place-items: center;
     border-radius: 35px;
-    font-size: clamp(10px, 3vw, 2vh);
+    font-size: clamp(2px, 3vw, 2vh);
     color: white;
     text-decoration: none;
+}
+
+#show-stick {
+    height: 7vh;
+    width: 100vw;
+    background-color: #282B30;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    color: white;
+    font-family: 'Teko', sans-serif;
+}
+
+#text-place {
+    display: inline-grid;
+    position: relative;
+    font-size: clamp(2px, 9vw, 4.8vh);
+    left: clamp(1.3vw, 12px, 12px);
+}
+
+#light-pic {
+    max-height: 80%;
+    position: relative;
+    display: inline-grid;
+    right: 3.7vw;
+}
+
+.do-stick-home {
+    position: sticky;
+    top: 0;
+}
+
+#home-details {
+    margin: 15px 15px;
+}
+
+@keyframes drag {
+    from {
+        position: relative;
+        opacity: 0.6;
+        top: 12vh;
+    }
+
+    to {
+        position: relative;
+        opacity: 1;
+        top: 0vh;
+    }
 }

@@ -8,7 +8,7 @@ import './App.css'
 export const LightMode = createContext()
 
 const App = () => {
-  const [modeState, setModeState] = useState(false)
+  const [modeState, setModeState] = useState(true)
 
   return (
      <LightMode.Provider value={[ modeState, setModeState ]}>
