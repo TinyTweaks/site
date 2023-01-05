@@ -1,29 +1,21 @@
-import { Link } from 'react-router-dom'
-import { useContext, useEffect, useRef, useState } from 'react'
-import banner from './photo/banner.png'
-import { LightMode } from './App.jsx'
+import { useContext, useRef, useState } from 'react'
 import moon_logo from './photo/moon_logo.png'
 import sun_logo from './photo/sun_logo.png'
+import { Link } from 'react-router-dom'
+import banner from './photo/banner.png'
+import { LightMode } from './App.jsx'
 
 const pointer = {
     background: 'linear-gradient(orange, red)', 
-    boxShadow: '1px 2px 8px 3px black' 
+    boxShadow: '0.5px 1px 4px 1.5px black' 
 }
 
 export function Navbar({ place }) {
 
     const emojies = [':)', ':D', ';)', '(•‿•)', 'B)', ':>', ';D', ':o' , '(⌐■_■)', '(◕⋏◕)', 'ʕ•́ᴥ•̀ʔ', 'ツ ', '◉_◉']
     const [lightColor, setLightColor] = useContext(LightMode)
-    const [lightPic, setLightPic] = useState(sun_logo)
+    const [lightPic, setLightPic] = useState(moon_logo)
     const navref = useRef()
-    
-    useEffect(() => {
-        window.onscroll = () => {
-            if(window.pageYOffset >= navref.current.offsetTop) {
-                navref.current.classList.add('do-stick-home')
-            }
-        }
-    }, [])
 
     const [emoji, setEmoji] = useState(
         emojies[Math.round(Math.random() * 12)]
@@ -51,18 +43,18 @@ export function Navbar({ place }) {
 
                <nav id="nav-navigation">
                    <Link to="/site" style={place === 'home' ? pointer : {}} 
-                       className="nav-design">
-                       Home
+                       className="nav-design" id="home-go">
+                       <span>&nbsp;&nbsp;Home&nbsp;&nbsp;</span>
                    </Link>
                    
                    <Link to="/site/settings" style={place === 'settings' ? pointer : {}}
-                       className="nav-design">
-                       Settings
+                       className="nav-design" id="home-set">
+                       <span> &nbsp;Settings&nbsp; </span>
                    </Link>
 
                    <Link to="/site/apps" style={place === 'apps' ? pointer : {}} 
-                       className="nav-design">
-                       Apps
+                       className="nav-design" id="home-app">
+                       <span> &nbsp;Apps&nbsp; </span>
                    </Link>
                </nav>
           </div>
@@ -74,7 +66,7 @@ export function Navbar({ place }) {
            <img src={lightPic} id="light-pic" onClick={() => {
                 setLightPic((prev) => prev === sun_logo ? moon_logo : sun_logo)
                 setLightColor((prev) => prev ? false : true)
-           }}/>
+           }} alt="Logo"/>
       </div>
  </>)
 }

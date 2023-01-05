@@ -32,7 +32,7 @@ body {
 }
 
 #nav-title {
-    top: 7%;
+    top: 10%;
     position: relative;
     font-size: clamp(10px, 5vh, 7.6vw);
     font-family: "Montserrat Alternates", sans-serif;
@@ -63,9 +63,14 @@ body {
     display: grid;
     place-items: center;
     border-radius: 35px;
-    font-size: clamp(2px, 3vw, 2vh);
+    font-size: 2vh;
     color: white;
     text-decoration: none;
+}
+
+.nav-design:hover {
+    animation: glow 0.3s 1;
+    font-size: 2.5vh;
 }
 
 #show-stick {
@@ -77,36 +82,43 @@ body {
     display: flex;
     color: white;
     font-family: 'Teko', sans-serif;
+    position: sticky;
+    top: 0px;
 }
 
 #text-place {
     display: inline-grid;
     position: relative;
-    font-size: clamp(2px, 9vw, 4.8vh);
+    font-size: clamp(2px, 10vw, 5vh);
     left: clamp(1.3vw, 12px, 12px);
 }
 
 #light-pic {
-    max-height: 80%;
+    max-height: 70%;
     position: relative;
     display: inline-grid;
-    right: 3.7vw;
-}
-
-.do-stick-home {
-    position: sticky;
-    top: 0;
+    right: 4.5vw;
 }
 
 #home-details {
     margin: 15px 15px;
 }
 
+@keyframes glow {
+    from {
+        font-size: 2vh;
+    }
+
+    to {
+        font-size: 2.5vh;
+    }
+}
+
 @keyframes drag {
     from {
         position: relative;
         opacity: 0.6;
-        top: 12vh;
+        top: 19vh;
     }
 
     to {
