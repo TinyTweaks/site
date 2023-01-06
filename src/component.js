@@ -14,7 +14,7 @@ export function Navbar({ place }) {
 
     const emojies = [':)', ':D', ';)', '(•‿•)', 'B)', ':>', ';D', ':o' , '(⌐■_■)', '(◕⋏◕)', 'ʕ•́ᴥ•̀ʔ', 'ツ ', '◉_◉']
     const [lightColor, setLightColor] = useContext(LightMode)
-    const [lightPic, setLightPic] = useState(moon_logo)
+    const [lightPic, setLightPic] = useState(sun_logo)
     const navref = useRef()
 
     const [emoji, setEmoji] = useState(
@@ -43,18 +43,18 @@ export function Navbar({ place }) {
 
                <nav id="nav-navigation">
                    <Link to="/site" style={place === 'home' ? pointer : {}} 
-                       className="nav-design" id="home-go">
-                       <span>&nbsp;&nbsp;Home&nbsp;&nbsp;</span>
+                       className="nav-design">
+                       <span>Home</span>
                    </Link>
                    
                    <Link to="/site/settings" style={place === 'settings' ? pointer : {}}
-                       className="nav-design" id="home-set">
-                       <span> &nbsp;Settings&nbsp; </span>
+                       className="nav-design">
+                       <span>Settings</span>
                    </Link>
 
                    <Link to="/site/apps" style={place === 'apps' ? pointer : {}} 
-                       className="nav-design" id="home-app">
-                       <span> &nbsp;Apps&nbsp; </span>
+                       className="nav-design">
+                       <span>Apps</span>
                    </Link>
                </nav>
           </div>

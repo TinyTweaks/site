@@ -32,7 +32,7 @@ body {
 }
 
 #nav-title {
-    top: 10%;
+    top: 10.5%;
     position: relative;
     font-size: clamp(10px, 5vh, 7.6vw);
     font-family: "Montserrat Alternates", sans-serif;
@@ -69,8 +69,8 @@ body {
 }
 
 .nav-design:hover {
-    animation: glow 0.3s 1;
-    font-size: 2.5vh;
+    position: relative;
+    bottom: 2px;
 }
 
 #show-stick {
@@ -84,6 +84,7 @@ body {
     font-family: 'Teko', sans-serif;
     position: sticky;
     top: 0px;
+    box-shadow: 1px 1px 5px 5px rgb(24, 24, 24);
 }
 
 #text-place {
@@ -100,18 +101,12 @@ body {
     right: 4.5vw;
 }
 
-#home-details {
-    margin: 15px 15px;
+#home-d-cover {
+    height: 200vh;
 }
 
-@keyframes glow {
-    from {
-        font-size: 2vh;
-    }
-
-    to {
-        font-size: 2.5vh;
-    }
+#home-d-cover > div {
+    padding: 18px 18px;
 }
 
 @keyframes drag {
@@ -126,4 +121,18 @@ body {
         opacity: 1;
         top: 0vh;
     }
+}
+
+@keyframes color {
+    0% { color: lime; }
+
+    25% { color: rgb(137, 17, 137); }
+
+    50% { color: red; }
+
+    60% { color: orange; }
+
+    75% { color: blue; }
+
+    100% { color: lime; }
 }
