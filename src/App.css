@@ -68,9 +68,11 @@ body {
     text-decoration: none;
 }
 
-.nav-design:hover {
-    position: relative;
-    bottom: 2px;
+@media (hover: hover) {
+    .nav-design:hover {
+        position: relative;
+        bottom: 2px;
+    }
 }
 
 #show-stick {
@@ -84,7 +86,9 @@ body {
     font-family: 'Teko', sans-serif;
     position: sticky;
     top: 0px;
-    box-shadow: 1px 1px 5px 5px rgb(24, 24, 24);
+    box-shadow: 0px 0px 8px 3px rgb(20, 20, 20);
+    border-bottom: 1px solid black;
+    z-index: 1;
 }
 
 #text-place {
@@ -103,23 +107,67 @@ body {
 
 #home-d-cover {
     height: 200vh;
+    padding: 1px;
 }
 
 #home-d-cover > div {
-    padding: 18px 18px;
+    place-items: center;
+    position: relative;
+    display: grid;
+    bottom: -2.3vh;
+}
+
+#welcome-text {
+    position: relative;
+    font-size: 4vh;
+    font-family: 'VT323', sans-serif;
+    text-shadow: 0 0 15px lime;
+    color: lime;    
+}
+
+#welcome-text > span {
+    animation: visual 2.8s infinite;
+    position: relative;
+    right: -2px;
+}
+
+#w-text-c {
+    width: 95%;
+    height: 6.5vh;
+    display: flex;
+    border-radius: 19px;
+    align-items: center;
+    box-shadow: 2.5px 2.5px 2.5px 2.5px rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(5px);
+    background-color: rgba(0,0,0, 0.5);
+    overflow: hidden;
 }
 
 @keyframes drag {
     from {
         position: relative;
-        opacity: 0.6;
-        top: 19vh;
+        opacity: 0;
+        top: 25vh;
     }
 
     to {
         position: relative;
         opacity: 1;
-        top: 0vh;
+        top: 2.3vh;
+    }
+}
+
+@keyframes visual {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 

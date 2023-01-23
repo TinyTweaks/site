@@ -23,9 +23,11 @@ export function Navbar({ place }) {
 
     let mode = lightColor === true ? {
         color: 'black',
+        shadowType: '0.020em 0.020em 0 rgba(100,100,255, 0.5), 0.05em 0.05em 0 rgba(70, 70, 70, 1)',
         background: 'linear-gradient(39deg, #3232f5, #41b7fb, #85d2ff 94.2%, blue 1%)'
     } : {
         color: 'white',
+        shadowType: '3px 3px 0 rgba(10, 10, 10, 1)',
         background: 'linear-gradient(39deg, rgb(29, 7, 64) 8.5%, rgb(253, 105, 139) 94.2%, black 1%)'
     }
 
@@ -34,7 +36,7 @@ export function Navbar({ place }) {
           <img src={banner} alt="Website Banner" id="nav-logo" />
 
           <div id="nav-cont">
-               <b id="nav-title" onClick={() => setEmoji(
+               <b id="nav-title" style={{ textShadow: mode.shadowType }} onClick={() => setEmoji(
                        emojies[Math.round(Math.random() * 12)]
                    )}>
 

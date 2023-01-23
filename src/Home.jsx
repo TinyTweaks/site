@@ -2,13 +2,35 @@ import React, { useContext, useEffect, useState } from "react";
 import { LightMode } from './App.jsx';
 import { Navbar } from './component'
 
+const textArray = [
+    'Howdy Folks!',
+    'Greetings ;)',
+    'Hello There!',
+    "What's up?",
+    "Hi Friend!",
+    "Welcome Here!:)",
+    "Enjoy your trip!:D",
+    "Welcome to my website!",
+    "Enjoy your stay! :)",
+    "Syntax error x_x",
+    "I'm kinda glitchy o_o",
+    'Do people even read this?',
+    'Aha! A Human! Nice to meet you :)',
+    "Look, I'm glowing!"
+]
+
 export default function Home() {
     const [ animate, setAnimation ] = useState('none')
     const [ hideText, setHideText ] = useState('0')
     const [ lightColor ] = useContext(LightMode)
+
+    let selectedText = textArray[Math.round(Math.random() * (textArray.length - 1))]
+    let isClearing = true
+
+    const [ sayText, setSayText ] = useState(selectedText)
     
     let mode = lightColor === true ? {
-        backgroundC: 'linear-gradient(white, grey)',
+        backgroundC: 'linear-gradient(30deg, white, rgb(240, 240, 240))',
         color: 'black'
     } : {
         backgroundC: 'linear-gradient(30deg, black, #242629)',
@@ -16,12 +38,56 @@ export default function Home() {
     }
 
     useEffect(() => {
-        setAnimation('drag 1.6s infinite')
+        setAnimation('drag 1.9s infinite')
         setHideText('1')
 
         setTimeout(() => {
             setAnimation('none')
-        }, 1500)
+
+            setInterval(() => {
+                if(isClearing) {
+                    let removeInv = setInterval(() => {
+                        if(!isClearing) return
+                        let sayTextN = '0'
+
+                        setSayText(prev => (function() {
+                            sayTextN = prev
+                            return prev
+                        })())
+
+                        if(sayTextN !== '') {
+                            setSayText(prev => prev.slice(0, prev.length -1))
+                        }
+                        else {
+                            selectedText = textArray[Math.round(Math.random() * (textArray.length - 1))]
+                            clearInterval(removeInv)
+                            isClearing = false
+                        }
+                    }, 120)
+                }
+
+                else {
+                    let writeInv = setInterval(() => {
+                        if(isClearing) return
+                        let sayTextN = '0'
+
+                        setSayText(prev => (function(){
+                            sayTextN = prev
+                            return prev
+                        })())
+
+                        if(sayTextN !== selectedText) {
+                            setSayText(prev => selectedText.slice(0, prev.length + 1))
+                        }
+                        else {
+                            selectedText = textArray[Math.round(Math.random() * (textArray.length - 1))]
+                            clearInterval(writeInv)
+                            isClearing = true
+                        }
+                    }, 150)
+                }
+            }, 4000)
+        }, 1850)
     }, [])
 
     return (
@@ -30,11 +96,11 @@ export default function Home() {
             
             <div id="home-d-cover" style={{ color: mode.color, background: mode.backgroundC }}>
                 <div style={{ animation: animate, opacity: hideText }}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, voluptates. Illo voluptates animi quas vel quaerat eligendi quisquam itaque beatae quo nulla. Eos amet ratione, assumenda molestias totam corporis dolorum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, minus. Cum aut sequi est tenetur nisi maiores? Officia suscipit vitae accusamus quaerat commodi maxime fugit at delectus esse, cum eligendi.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, maiores officia ad nisi consequatur non asperiores officiis quasi deserunt sit laudantium, explicabo cumin doloremque unde! Cumque ea cum quas magnam!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis doloremque dignissimos iste, reiciendis natus ipsum illum, voluptas fugit ut porro doloribus magnam fugiat ratione quia molestias facilis consectetur optio. Quia?
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet totam ut voluptatibus ipsam nulla cum quam, inventore assumenda minima nobis quia, eveniet earum at minus aliquam cumque, perspiciatis omnis tenetur!
+                    <div id="w-text-c">
+                        <p id="welcome-text">
+                            &nbsp;{sayText}<span>_</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
