@@ -75,6 +75,13 @@ body {
     }
 }
 
+@media (hover: none) {
+    .nav-design {
+        position: relative;
+        bottom: 0;
+    }
+}
+
 #show-stick {
     height: 7vh;
     width: 100vw;
@@ -143,6 +150,13 @@ body {
     overflow: hidden;
 }
 
+#home-cont-down {
+    width: 95%;
+    height: 100vh;
+    position: relative;
+    top: 15px;
+}
+
 @keyframes drag {
     from {
         position: relative;
@@ -163,7 +177,7 @@ body {
     }
 
     50% {
-        opacity: 0;
+        opacity: 0.25;
     }
 
     100% {

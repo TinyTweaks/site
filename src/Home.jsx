@@ -15,17 +15,19 @@ const textArray = [
     "Syntax error x_x",
     "I'm kinda glitchy o_o",
     'Do people even read this?',
-    'Aha! A Human! Nice to meet you :)',
-    "Look, I'm glowing!"
+    'Aha! A Human! Hello :)',
+    "Look, I'm glowing!",
+    "Nice to meet you :)",
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ]
+
+let selectedText = textArray[Math.round(Math.random() * (textArray.length - 1))]
+let isClearing = true
 
 export default function Home() {
     const [ animate, setAnimation ] = useState('none')
     const [ hideText, setHideText ] = useState('0')
     const [ lightColor ] = useContext(LightMode)
-
-    let selectedText = textArray[Math.round(Math.random() * (textArray.length - 1))]
-    let isClearing = true
 
     const [ sayText, setSayText ] = useState(selectedText)
     
@@ -100,6 +102,10 @@ export default function Home() {
                         <p id="welcome-text">
                             &nbsp;{sayText}<span>_</span>
                         </p>
+                    </div>
+
+                    <div id="home-cont-down">
+                        
                     </div>
                 </div>
             </div>
